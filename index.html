@@ -6,16 +6,92 @@
          </head>
          <body>
              <script>
+                 let playerScore = 0;
+                 let computerScore = 0
+                 function computerPlay(){
+                     let x = Array('Rock','Paper','Scissors');
+
+                     let answer = x[Math.floor(Math.random() * x.length)];
+                     return answer;
+                 }
+                 function round(playerSelection,computerSelection){
+                     playerSelection = playerSelection.toLowerCase();
+                     computerSelection = computerSelection.toLowerCase();
+                     
+                     if(playerSelection == 'rock' && computerSelection == 'paper')
+                     {
+                        computerScore++;
+                        return 'You Lose! Paper beats Rock'
+                     }
+                    else if(playerSelection == 'paper' && computerSelection == 'rock')
+                     {
+                         playerScore++;
+                        return 'You Win! Paper beats Rock'
+                         
+                     }
+                     else if(playerSelection == 'scissors' && computerSelection == 'paper')
+                     {
+                        playerScore++;
+                        return 'You Win! Scissors beats Paper'
+                     }
+                     else if(playerSelection == 'paper' && computerSelection == 'scissors')
+                     {
+                        computerScore++;
+                        return 'You Lose! Scissors beats Paper'
+                     }
+                     else if(playerSelection == 'scissors' && computerSelection == 'rock')
+                     {
+                        computerScore++;
+                        return 'You Lose! Rock beats Scissors'
+                     }
+                     else if(playerSelection == 'rock' && computerSelection == 'scissors')
+                     {
+                        playerScore++;
+                        return 'You Win! Rock beats Scissors'
+                     }
+                     else{
+                         return "It's a Tie"
+                     }
+                    
+
+                 }
+                 function game(playerAns){
+                     
+                     
 
 
+                    for(let i = 0; i < 5; i++){
+                        playerAns = prompt("What do you choose")
+                        console.log(round(playerAns,computerPlay()))
+                        
 
-
-
-
-
-
-
+                    }
+                    if(playerScore > computerScore){
+                        return "the Player Wins the Game. PlayerScore: " + playerScore + " ComputerScore:" + computerScore
+                    }
+                    if(playerScore < computerScore){
+                        return "The Computer Wins the Game. PlayerScore: " + playerScore + " ComputerScore:" + computerScore
+                    }
+                    else{
+                        return "The Game is Over, It's a Tie. PlayerScore: " + playerScore + " ComputerScore:" + computerScore
+                    }
+                    
+                 }
+          
+          //console.log(round('rock',c))
+         
+               console.log(game('rock'))
                  
+
+
+
+
+
+
+
+
+
+
              </script>
 
 
