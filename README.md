@@ -1,2 +1,2 @@
 # Rock-Paper-Scissor
-A java script version of rock papaer scissor
+A Website to test my knowledge on the fundamentals of javascript by making the player play rock, paper, scissors with a computer.
